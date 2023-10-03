@@ -6,6 +6,7 @@
     margin: 1%;
     position: relative;
     bottom: 10px;
+ 
 }
 .timer-count{
     border: 2px black;
@@ -37,6 +38,8 @@ ul li{
 .question{
     font-size: 50px;
     margin: 10px;
+    position: relative;
+    bottom: 80px;
 }
 
 .answers{
