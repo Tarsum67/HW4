@@ -30,9 +30,16 @@
 body{
     background-color: rgb(80, 76, 76);
 }
-ul li{
+
+ul button{
     margin: 70px;
     list-style: none;
+    display: flex;
+    flex-direction: column;
+    width: 500px;
+    font-size: 20px;
+    color:yellow;
+    background-color: midnightblue;
 
 }
 .question{
@@ -40,6 +47,10 @@ ul li{
     margin: 10px;
     position: relative;
     bottom: 80px;
+    color: yellow;
+    background-color: midnightblue;
+    border: 2px solid black;
+    width: 200px;
 }
 
 .answers{
