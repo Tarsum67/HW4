@@ -4,6 +4,8 @@ var startbtn = document.querySelector(".start-button");
 var questionsEl = document.querySelector("questions");
 var body = document.body;
 var locq = document.header;
+
+
 var question1 = document.createElement("p");
 var question2 = document.createElement("p");
 var question3 = document.createElement("p");
@@ -85,7 +87,7 @@ function startQuiz(){
 }
 
 function startTimer(){
-     var timer = setInterval(function() {
+    var timer = setInterval(function() {
         timerCount--;
         timerEl.textContent = timerCount;
         
@@ -93,7 +95,7 @@ function startTimer(){
             clearInterval(timer);
             // outOfTime()
             timerEl.remove();
-           
+            
         };
         
     },1000);
@@ -121,8 +123,8 @@ function startTimer(){
         listEl.appendChild(li6);
         listEl.appendChild(li7);
         listEl.appendChild(li8);
-
-
+        
+        
     };
     function correct1(){
         alert("Correct!")
@@ -144,7 +146,7 @@ function startTimer(){
         listEl.appendChild(li11);
         listEl.appendChild(li12);
     };
-
+    
     function correct2(){
         alert("Correct!")
         body.appendChild(done)
@@ -160,49 +162,78 @@ function startTimer(){
         li11.remove();
         li12.remove();
         done.remove();
-        questionsEl.remove();
+        // questionsEl.remove();
+        addUser();
         
-      
+        
     };
+    
+    function addUser() {
+        var newForm = document.createElement("form");
+      
+
+          
+         
+            newForm.method = "post"; 
+
         
-        
-        
-        li1.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
-        li2.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li3.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li4.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-
-       
-        li5.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
-        li6.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li7.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li8.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-
-        li9.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
-        li10.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li11.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-        li12.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
-
-        next.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
-        next1.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
-        done.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
-
-        timerEl.setAttribute("style"," display: flex; flex-wrap: wrap; justify-content: center; font-size: 50px; margin: 1%; position: relative; bottom: 10px; width: 10%;    border: 2px black;border-style: solid;padding: 2px;background-color: indigo;color:yellow;");
+            var input1 = document.createElement("input");
+            input1.type = "text";
+            input1.name = "username";
+            input1.placeholder = "Name";
+            newForm.appendChild(input1);
 
 
+   
+            var submitButton = document.createElement("input");
+            submitButton.type = "submit";
+            submitButton.value = "Submit";
+            newForm.appendChild(submitButton);
+            
+            newForm.setAttribute("style", "padding: 50px; width:100%;;margin:0 auto; ")
 
-        startbtn.addEventListener("click",startQuiz);
-        li1.addEventListener("click",wrong);
-        li2.addEventListener("click",correct);
-        li3.addEventListener("click",wrong);
-        li4.addEventListener("click",wrong);
-        next.addEventListener("click",Next);
+            body.appendChild(newForm);
+        };
 
-        li5.addEventListener("click",wrong1);
-        li6.addEventListener("click",wrong1);
-        li7.addEventListener("click",wrong1);
-        li8.addEventListener("click",correct1);
-        next1.addEventListener("click",Next1);
+    
+    
+    
+    li1.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
+    li2.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li3.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li4.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    
+    
+    li5.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
+    li6.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li7.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li8.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    
+    li9.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px; font-size: 30px;");
+    li10.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li11.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    li12.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 35px;font-size: 30px;");
+    
+    next.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
+    next1.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
+    done.setAttribute("style", " color:yellow; background:midnightblue; padding: 5px; margin-left: 90%; margin-top: -2%; font-size: 30px; ");
+    
+    timerEl.setAttribute("style"," display: flex; flex-wrap: wrap; justify-content: center; font-size: 50px; margin: 1%; position: relative; bottom: 10px; width: 10%;    border: 2px black;border-style: solid;padding: 2px;background-color: indigo;color:yellow;");
+    
+    
+    
+    startbtn.addEventListener("click",startQuiz);
+    li1.addEventListener("click",wrong);
+    li2.addEventListener("click",correct);
+    li3.addEventListener("click",wrong);
+    li4.addEventListener("click",wrong);
+    next.addEventListener("click",Next);
+    
+    li5.addEventListener("click",wrong1);
+    li6.addEventListener("click",wrong1);
+    li7.addEventListener("click",wrong1);
+    li8.addEventListener("click",correct1);
+    next1.addEventListener("click",Next1);
 
         li9.addEventListener("click",wrong2);
         li10.addEventListener("click",wrong2);
@@ -210,4 +241,4 @@ function startTimer(){
         li12.addEventListener("click",wrong2);
         done.addEventListener("click",Done);
         
-        
+     
